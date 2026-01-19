@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60B34EB9B4394532AC55A076 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B34EB9B4394532AC55A076_FILE /* Game.swift */; };
+		6C6B6887EA3E49329DEA5B2D /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B6887EA3E49329DEA5B2D_FILE /* PlayerScore.swift */; };
+		8815EE3E2F1E7BF800849F22 /* ScoreInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE2B2F1E7BF800849F22 /* ScoreInputView.swift */; };
+		8815EE3F2F1E7BF800849F22 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE282F1E7BF800849F22 /* GameDetailView.swift */; };
+		8815EE402F1E7BF800849F22 /* MonthlySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE3B2F1E7BF800849F22 /* MonthlySummaryView.swift */; };
+		8815EE412F1E7BF800849F22 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE2F2F1E7BF800849F22 /* GroupsView.swift */; };
+		8815EE422F1E7BF800849F22 /* FreeMahjongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE1B2F1E7BF800849F22 /* FreeMahjongViewModel.swift */; };
+		8815EE432F1E7BF800849F22 /* MatchHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE1D2F1E7BF800849F22 /* MatchHistoryViewModel.swift */; };
+		8815EE442F1E7BF800849F22 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE1A2F1E7BF800849F22 /* AuthViewModel.swift */; };
+		8815EE452F1E7BF800849F22 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE182F1E7BF800849F22 /* ScoreCalculator.swift */; };
+		8815EE462F1E7BF800849F22 /* FreeMahjongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE262F1E7BF800849F22 /* FreeMahjongView.swift */; };
+		8815EE472F1E7BF800849F22 /* RulesSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE2A2F1E7BF800849F22 /* RulesSettingView.swift */; };
+		8815EE482F1E7BF800849F22 /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE202F1E7BF800849F22 /* RankingViewModel.swift */; };
+		8815EE492F1E7BF800849F22 /* RulesSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE212F1E7BF800849F22 /* RulesSettingViewModel.swift */; };
+		8815EE4A2F1E7BF800849F22 /* GameTypeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE292F1E7BF800849F22 /* GameTypeSelectionView.swift */; };
+		8815EE4B2F1E7BF800849F22 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE372F1E7BF800849F22 /* RankingView.swift */; };
+		8815EE4C2F1E7BF800849F22 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE1F2F1E7BF800849F22 /* MyPageViewModel.swift */; };
+		8815EE4D2F1E7BF800849F22 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE392F1E7BF800849F22 /* SplashView.swift */; };
+		8815EE4E2F1E7BF800849F22 /* GroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE2E2F1E7BF800849F22 /* GroupDetailView.swift */; };
+		8815EE4F2F1E7BF800849F22 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE242F1E7BF800849F22 /* SignInView.swift */; };
+		8815EE502F1E7BF800849F22 /* ScoreInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE222F1E7BF800849F22 /* ScoreInputViewModel.swift */; };
+		8815EE512F1E7BF800849F22 /* MatchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE332F1E7BF800849F22 /* MatchHistoryView.swift */; };
+		8815EE522F1E7BF800849F22 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE172F1E7BF800849F22 /* DateFormatter+Extensions.swift */; };
+		8815EE532F1E7BF800849F22 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE352F1E7BF800849F22 /* MyPageView.swift */; };
+		8815EE542F1E7BF800849F22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE312F1E7BF800849F22 /* HomeView.swift */; };
+		8815EE552F1E7BF800849F22 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE152F1E7BF800849F22 /* FirebaseService.swift */; };
+		8815EE562F1E7BF800849F22 /* MonthlySummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE1E2F1E7BF800849F22 /* MonthlySummaryViewModel.swift */; };
+		8815EE572F1E7BF800849F22 /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE2D2F1E7BF800849F22 /* CreateGroupView.swift */; };
+		8815EE582F1E7BF800849F22 /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE1C2F1E7BF800849F22 /* GroupsViewModel.swift */; };
+		8815EE5B2F1E7E7400849F22 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8815EE5A2F1E7E7400849F22 /* FirebaseAuth */; };
+		8815EE5D2F1E7E7400849F22 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8815EE5C2F1E7E7400849F22 /* FirebaseFirestore */; };
+		8815EE612F1E8F6000849F22 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE5F2F1E8F6000849F22 /* DataServiceProtocol.swift */; };
+		8815EE622F1E8F6000849F22 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE602F1E8F6000849F22 /* MockDataService.swift */; };
+		8815EE632F1E8F6000849F22 /* DataServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE5E2F1E8F6000849F22 /* DataServiceManager.swift */; };
+		8815EE652F1E92FF00849F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE642F1E92FF00849F22 /* Assets.xcassets */; };
+		8815EE672F1E99CF00849F22 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE662F1E99CF00849F22 /* LuckiestGuy-Regular.ttf */; };
+		8815EE6A2F1EA05C00849F22 /* GroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE682F1EA05C00849F22 /* GroupMember.swift */; };
+		8815EE6B2F1EA05C00849F22 /* MemberRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE692F1EA05C00849F22 /* MemberRole.swift */; };
+		8815EE6D2F1EA0DF00849F22 /* GroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE6C2F1EA0DF00849F22 /* GroupManager.swift */; };
+		8815EE6F2F1EAACD00849F22 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE6E2F1EAACD00849F22 /* StatisticsView.swift */; };
+		8815EE712F1EAAFB00849F22 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE702F1EAAFB00849F22 /* StatisticsViewModel.swift */; };
+		8815EE752F1EC3F700849F22 /* DelaGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE742F1EC3F700849F22 /* DelaGothicOne-Regular.ttf */; };
+		8815EE772F1ECA2D00849F22 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815EE762F1ECA2D00849F22 /* CustomTabBar.swift */; };
+		8815EE912F1ED24000849F22 /* ZenMaruGothic-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE8C2F1ED24000849F22 /* ZenMaruGothic-Black.ttf */; };
+		8815EE922F1ED24000849F22 /* ZenMaruGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE8D2F1ED24000849F22 /* ZenMaruGothic-Bold.ttf */; };
+		8815EE932F1ED24000849F22 /* ZenMaruGothic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE8E2F1ED24000849F22 /* ZenMaruGothic-Light.ttf */; };
+		8815EE942F1ED24000849F22 /* ZenMaruGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE902F1ED24000849F22 /* ZenMaruGothic-Regular.ttf */; };
+		8815EE952F1ED24000849F22 /* ZenMaruGothic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8815EE8F2F1ED24000849F22 /* ZenMaruGothic-Medium.ttf */; };
+		8E9371842A634179ADA55DC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9371842A634179ADA55DC5_FILE /* ContentView.swift */; };
+		96DC3D3C433C44E3B7ED779A /* TSUMOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DC3D3C433C44E3B7ED779A_FILE /* TSUMOApp.swift */; };
+		CFAF93F0678D4079B4401A22 /* GameRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF93F0678D4079B4401A22_FILE /* GameRules.swift */; };
+		D1ABA351968843898D291499 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABA351968843898D291499_FILE /* Group.swift */; };
+		FE7896A7D6A446808971C268 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7896A7D6A446808971C268_FILE /* User.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		46D61636FA704BD7A1F87D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5902CC78FE9D46E091318B15 /* TSUMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSUMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60B34EB9B4394532AC55A076_FILE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6C6B6887EA3E49329DEA5B2D_FILE /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
+		8815EE152F1E7BF800849F22 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		8815EE172F1E7BF800849F22 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		8815EE182F1E7BF800849F22 /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculator.swift; sourceTree = "<group>"; };
+		8815EE1A2F1E7BF800849F22 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		8815EE1B2F1E7BF800849F22 /* FreeMahjongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeMahjongViewModel.swift; sourceTree = "<group>"; };
+		8815EE1C2F1E7BF800849F22 /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
+		8815EE1D2F1E7BF800849F22 /* MatchHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchHistoryViewModel.swift; sourceTree = "<group>"; };
+		8815EE1E2F1E7BF800849F22 /* MonthlySummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySummaryViewModel.swift; sourceTree = "<group>"; };
+		8815EE1F2F1E7BF800849F22 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		8815EE202F1E7BF800849F22 /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
+		8815EE212F1E7BF800849F22 /* RulesSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesSettingViewModel.swift; sourceTree = "<group>"; };
+		8815EE222F1E7BF800849F22 /* ScoreInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputViewModel.swift; sourceTree = "<group>"; };
+		8815EE242F1E7BF800849F22 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		8815EE262F1E7BF800849F22 /* FreeMahjongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeMahjongView.swift; sourceTree = "<group>"; };
+		8815EE282F1E7BF800849F22 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		8815EE292F1E7BF800849F22 /* GameTypeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeSelectionView.swift; sourceTree = "<group>"; };
+		8815EE2A2F1E7BF800849F22 /* RulesSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesSettingView.swift; sourceTree = "<group>"; };
+		8815EE2B2F1E7BF800849F22 /* ScoreInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreInputView.swift; sourceTree = "<group>"; };
+		8815EE2D2F1E7BF800849F22 /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
+		8815EE2E2F1E7BF800849F22 /* GroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailView.swift; sourceTree = "<group>"; };
+		8815EE2F2F1E7BF800849F22 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
+		8815EE312F1E7BF800849F22 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8815EE332F1E7BF800849F22 /* MatchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchHistoryView.swift; sourceTree = "<group>"; };
+		8815EE352F1E7BF800849F22 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		8815EE372F1E7BF800849F22 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		8815EE392F1E7BF800849F22 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		8815EE3B2F1E7BF800849F22 /* MonthlySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySummaryView.swift; sourceTree = "<group>"; };
+		8815EE5E2F1E8F6000849F22 /* DataServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceManager.swift; sourceTree = "<group>"; };
+		8815EE5F2F1E8F6000849F22 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
+		8815EE602F1E8F6000849F22 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		8815EE642F1E92FF00849F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8815EE662F1E99CF00849F22 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		8815EE682F1EA05C00849F22 /* GroupMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMember.swift; sourceTree = "<group>"; };
+		8815EE692F1EA05C00849F22 /* MemberRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRole.swift; sourceTree = "<group>"; };
+		8815EE6C2F1EA0DF00849F22 /* GroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupManager.swift; sourceTree = "<group>"; };
+		8815EE6E2F1EAACD00849F22 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		8815EE702F1EAAFB00849F22 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		8815EE742F1EC3F700849F22 /* DelaGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DelaGothicOne-Regular.ttf"; sourceTree = "<group>"; };
+		8815EE762F1ECA2D00849F22 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		8815EE8C2F1ED24000849F22 /* ZenMaruGothic-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenMaruGothic-Black.ttf"; sourceTree = "<group>"; };
+		8815EE8D2F1ED24000849F22 /* ZenMaruGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenMaruGothic-Bold.ttf"; sourceTree = "<group>"; };
+		8815EE8E2F1ED24000849F22 /* ZenMaruGothic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenMaruGothic-Light.ttf"; sourceTree = "<group>"; };
+		8815EE8F2F1ED24000849F22 /* ZenMaruGothic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenMaruGothic-Medium.ttf"; sourceTree = "<group>"; };
+		8815EE902F1ED24000849F22 /* ZenMaruGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenMaruGothic-Regular.ttf"; sourceTree = "<group>"; };
+		8E9371842A634179ADA55DC5_FILE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		96DC3D3C433C44E3B7ED779A_FILE /* TSUMOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUMOApp.swift; sourceTree = "<group>"; };
+		CFAF93F0678D4079B4401A22_FILE /* GameRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRules.swift; sourceTree = "<group>"; };
+		D1ABA351968843898D291499_FILE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		FE7896A7D6A446808971C268_FILE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C72446C8F824923B4174122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8815EE5B2F1E7E7400849F22 /* FirebaseAuth in Frameworks */,
+				8815EE5D2F1E7E7400849F22 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13D87519C9C548C2856ED3CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE6C2F1EA0DF00849F22 /* GroupManager.swift */,
+				8815EE682F1EA05C00849F22 /* GroupMember.swift */,
+				8815EE692F1EA05C00849F22 /* MemberRole.swift */,
+				FE7896A7D6A446808971C268_FILE /* User.swift */,
+				D1ABA351968843898D291499_FILE /* Group.swift */,
+				60B34EB9B4394532AC55A076_FILE /* Game.swift */,
+				CFAF93F0678D4079B4401A22_FILE /* GameRules.swift */,
+				6C6B6887EA3E49329DEA5B2D_FILE /* PlayerScore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7124ACFEEC7D4FF8AC4669A6 /* TSUMO */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE642F1E92FF00849F22 /* Assets.xcassets */,
+				8815EE162F1E7BF800849F22 /* Services */,
+				8815EE192F1E7BF800849F22 /* Utilities */,
+				8815EE232F1E7BF800849F22 /* ViewModels */,
+				8815EE3D2F1E7BF800849F22 /* Views */,
+				96DC3D3C433C44E3B7ED779A_FILE /* TSUMOApp.swift */,
+				8E9371842A634179ADA55DC5_FILE /* ContentView.swift */,
+				13D87519C9C548C2856ED3CA /* Models */,
+				E529091BDBE543709FA22614 /* Resources */,
+				46D61636FA704BD7A1F87D5D /* Info.plist */,
+			);
+			path = TSUMO;
+			sourceTree = "<group>";
+		};
+		8815EE162F1E7BF800849F22 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE5E2F1E8F6000849F22 /* DataServiceManager.swift */,
+				8815EE5F2F1E8F6000849F22 /* DataServiceProtocol.swift */,
+				8815EE602F1E8F6000849F22 /* MockDataService.swift */,
+				8815EE152F1E7BF800849F22 /* FirebaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8815EE192F1E7BF800849F22 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE172F1E7BF800849F22 /* DateFormatter+Extensions.swift */,
+				8815EE182F1E7BF800849F22 /* ScoreCalculator.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8815EE232F1E7BF800849F22 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE702F1EAAFB00849F22 /* StatisticsViewModel.swift */,
+				8815EE1A2F1E7BF800849F22 /* AuthViewModel.swift */,
+				8815EE1B2F1E7BF800849F22 /* FreeMahjongViewModel.swift */,
+				8815EE1C2F1E7BF800849F22 /* GroupsViewModel.swift */,
+				8815EE1D2F1E7BF800849F22 /* MatchHistoryViewModel.swift */,
+				8815EE1E2F1E7BF800849F22 /* MonthlySummaryViewModel.swift */,
+				8815EE1F2F1E7BF800849F22 /* MyPageViewModel.swift */,
+				8815EE202F1E7BF800849F22 /* RankingViewModel.swift */,
+				8815EE212F1E7BF800849F22 /* RulesSettingViewModel.swift */,
+				8815EE222F1E7BF800849F22 /* ScoreInputViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8815EE252F1E7BF800849F22 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE242F1E7BF800849F22 /* SignInView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		8815EE272F1E7BF800849F22 /* FreeMahjong */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE262F1E7BF800849F22 /* FreeMahjongView.swift */,
+			);
+			path = FreeMahjong;
+			sourceTree = "<group>";
+		};
+		8815EE2C2F1E7BF800849F22 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE282F1E7BF800849F22 /* GameDetailView.swift */,
+				8815EE292F1E7BF800849F22 /* GameTypeSelectionView.swift */,
+				8815EE2A2F1E7BF800849F22 /* RulesSettingView.swift */,
+				8815EE2B2F1E7BF800849F22 /* ScoreInputView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		8815EE302F1E7BF800849F22 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE2D2F1E7BF800849F22 /* CreateGroupView.swift */,
+				8815EE2E2F1E7BF800849F22 /* GroupDetailView.swift */,
+				8815EE2F2F1E7BF800849F22 /* GroupsView.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		8815EE322F1E7BF800849F22 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE312F1E7BF800849F22 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8815EE342F1E7BF800849F22 /* MatchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE332F1E7BF800849F22 /* MatchHistoryView.swift */,
+			);
+			path = MatchHistory;
+			sourceTree = "<group>";
+		};
+		8815EE362F1E7BF800849F22 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE352F1E7BF800849F22 /* MyPageView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		8815EE382F1E7BF800849F22 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE372F1E7BF800849F22 /* RankingView.swift */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		8815EE3A2F1E7BF800849F22 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE392F1E7BF800849F22 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		8815EE3C2F1E7BF800849F22 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE6E2F1EAACD00849F22 /* StatisticsView.swift */,
+				8815EE3B2F1E7BF800849F22 /* MonthlySummaryView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		8815EE3D2F1E7BF800849F22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE762F1ECA2D00849F22 /* CustomTabBar.swift */,
+				8815EE252F1E7BF800849F22 /* Authentication */,
+				8815EE272F1E7BF800849F22 /* FreeMahjong */,
+				8815EE2C2F1E7BF800849F22 /* Game */,
+				8815EE302F1E7BF800849F22 /* Groups */,
+				8815EE322F1E7BF800849F22 /* Home */,
+				8815EE342F1E7BF800849F22 /* MatchHistory */,
+				8815EE362F1E7BF800849F22 /* MyPage */,
+				8815EE382F1E7BF800849F22 /* Ranking */,
+				8815EE3A2F1E7BF800849F22 /* Splash */,
+				8815EE3C2F1E7BF800849F22 /* Statistics */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A3178B8E31E74FCAB8C33E40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5902CC78FE9D46E091318B15 /* TSUMO.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD47BCBF6D6A40B7B50999AB = {
+			isa = PBXGroup;
+			children = (
+				7124ACFEEC7D4FF8AC4669A6 /* TSUMO */,
+				A3178B8E31E74FCAB8C33E40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E529091BDBE543709FA22614 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8815EE8C2F1ED24000849F22 /* ZenMaruGothic-Black.ttf */,
+				8815EE8D2F1ED24000849F22 /* ZenMaruGothic-Bold.ttf */,
+				8815EE8E2F1ED24000849F22 /* ZenMaruGothic-Light.ttf */,
+				8815EE8F2F1ED24000849F22 /* ZenMaruGothic-Medium.ttf */,
+				8815EE902F1ED24000849F22 /* ZenMaruGothic-Regular.ttf */,
+				8815EE742F1EC3F700849F22 /* DelaGothicOne-Regular.ttf */,
+				8815EE662F1E99CF00849F22 /* LuckiestGuy-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67C3E44243E8434AAF3255D0 /* TSUMO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67C3E44243E8434AAF3255D0_CONFIG_LIST /* Build configuration list for PBXNativeTarget "TSUMO" */;
+			buildPhases = (
+				D5125EBB61D34E9AB6629BD8 /* Sources */,
+				9C72446C8F824923B4174122 /* Frameworks */,
+				3C7801B14F744516B0CA0090 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TSUMO;
+			productName = TSUMO;
+			productReference = 5902CC78FE9D46E091318B15 /* TSUMO.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		61A6D59FCC8144AF9A1DDE6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = A742733BBD614494B54E0263 /* Build configuration list for PBXProject "TSUMO" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+			);
+			mainGroup = DD47BCBF6D6A40B7B50999AB;
+			packageReferences = (
+				8815EE592F1E7E7400849F22 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = A3178B8E31E74FCAB8C33E40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67C3E44243E8434AAF3255D0 /* TSUMO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C7801B14F744516B0CA0090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8815EE652F1E92FF00849F22 /* Assets.xcassets in Resources */,
+				8815EE672F1E99CF00849F22 /* LuckiestGuy-Regular.ttf in Resources */,
+				8815EE752F1EC3F700849F22 /* DelaGothicOne-Regular.ttf in Resources */,
+				8815EE912F1ED24000849F22 /* ZenMaruGothic-Black.ttf in Resources */,
+				8815EE922F1ED24000849F22 /* ZenMaruGothic-Bold.ttf in Resources */,
+				8815EE932F1ED24000849F22 /* ZenMaruGothic-Light.ttf in Resources */,
+				8815EE942F1ED24000849F22 /* ZenMaruGothic-Regular.ttf in Resources */,
+				8815EE952F1ED24000849F22 /* ZenMaruGothic-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5125EBB61D34E9AB6629BD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96DC3D3C433C44E3B7ED779A /* TSUMOApp.swift in Sources */,
+				8E9371842A634179ADA55DC5 /* ContentView.swift in Sources */,
+				FE7896A7D6A446808971C268 /* User.swift in Sources */,
+				8815EE3E2F1E7BF800849F22 /* ScoreInputView.swift in Sources */,
+				8815EE6A2F1EA05C00849F22 /* GroupMember.swift in Sources */,
+				8815EE6B2F1EA05C00849F22 /* MemberRole.swift in Sources */,
+				8815EE3F2F1E7BF800849F22 /* GameDetailView.swift in Sources */,
+				8815EE402F1E7BF800849F22 /* MonthlySummaryView.swift in Sources */,
+				8815EE412F1E7BF800849F22 /* GroupsView.swift in Sources */,
+				8815EE422F1E7BF800849F22 /* FreeMahjongViewModel.swift in Sources */,
+				8815EE432F1E7BF800849F22 /* MatchHistoryViewModel.swift in Sources */,
+				8815EE442F1E7BF800849F22 /* AuthViewModel.swift in Sources */,
+				8815EE452F1E7BF800849F22 /* ScoreCalculator.swift in Sources */,
+				8815EE6F2F1EAACD00849F22 /* StatisticsView.swift in Sources */,
+				8815EE462F1E7BF800849F22 /* FreeMahjongView.swift in Sources */,
+				8815EE472F1E7BF800849F22 /* RulesSettingView.swift in Sources */,
+				8815EE482F1E7BF800849F22 /* RankingViewModel.swift in Sources */,
+				8815EE712F1EAAFB00849F22 /* StatisticsViewModel.swift in Sources */,
+				8815EE492F1E7BF800849F22 /* RulesSettingViewModel.swift in Sources */,
+				8815EE4A2F1E7BF800849F22 /* GameTypeSelectionView.swift in Sources */,
+				8815EE4B2F1E7BF800849F22 /* RankingView.swift in Sources */,
+				8815EE4C2F1E7BF800849F22 /* MyPageViewModel.swift in Sources */,
+				8815EE4D2F1E7BF800849F22 /* SplashView.swift in Sources */,
+				8815EE4E2F1E7BF800849F22 /* GroupDetailView.swift in Sources */,
+				8815EE4F2F1E7BF800849F22 /* SignInView.swift in Sources */,
+				8815EE502F1E7BF800849F22 /* ScoreInputViewModel.swift in Sources */,
+				8815EE512F1E7BF800849F22 /* MatchHistoryView.swift in Sources */,
+				8815EE612F1E8F6000849F22 /* DataServiceProtocol.swift in Sources */,
+				8815EE622F1E8F6000849F22 /* MockDataService.swift in Sources */,
+				8815EE632F1E8F6000849F22 /* DataServiceManager.swift in Sources */,
+				8815EE522F1E7BF800849F22 /* DateFormatter+Extensions.swift in Sources */,
+				8815EE6D2F1EA0DF00849F22 /* GroupManager.swift in Sources */,
+				8815EE532F1E7BF800849F22 /* MyPageView.swift in Sources */,
+				8815EE542F1E7BF800849F22 /* HomeView.swift in Sources */,
+				8815EE552F1E7BF800849F22 /* FirebaseService.swift in Sources */,
+				8815EE562F1E7BF800849F22 /* MonthlySummaryViewModel.swift in Sources */,
+				8815EE572F1E7BF800849F22 /* CreateGroupView.swift in Sources */,
+				8815EE582F1E7BF800849F22 /* GroupsViewModel.swift in Sources */,
+				8815EE772F1ECA2D00849F22 /* CustomTabBar.swift in Sources */,
+				D1ABA351968843898D291499 /* Group.swift in Sources */,
+				60B34EB9B4394532AC55A076 /* Game.swift in Sources */,
+				CFAF93F0678D4079B4401A22 /* GameRules.swift in Sources */,
+				6C6B6887EA3E49329DEA5B2D /* PlayerScore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		67C3E44243E8434AAF3255D0_B3CACECDBA9A4BF1B9C71C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TSUMO/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsumo.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67C3E44243E8434AAF3255D0_F46389D4662549BAA2F840A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TSUMO/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsumo.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B3CACECDBA9A4BF1B9C71C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F46389D4662549BAA2F840A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67C3E44243E8434AAF3255D0_CONFIG_LIST /* Build configuration list for PBXNativeTarget "TSUMO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67C3E44243E8434AAF3255D0_B3CACECDBA9A4BF1B9C71C59 /* Debug */,
+				67C3E44243E8434AAF3255D0_F46389D4662549BAA2F840A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A742733BBD614494B54E0263 /* Build configuration list for PBXProject "TSUMO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3CACECDBA9A4BF1B9C71C59 /* Debug */,
+				F46389D4662549BAA2F840A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8815EE592F1E7E7400849F22 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8815EE5A2F1E7E7400849F22 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8815EE592F1E7E7400849F22 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8815EE5C2F1E7E7400849F22 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8815EE592F1E7E7400849F22 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 61A6D59FCC8144AF9A1DDE6B /* Project object */;
+}
