@@ -254,53 +254,51 @@ struct GroupRowView: View {
     private let mediumBlue = Color(red: 0.27, green: 0.57, blue: 0.83) // #4591d3
     
     var body: some View {
-        GeometryReader { geometry in
-            let cardWidth: CGFloat = 353
-            ZStack(alignment: .topLeading) {
-                // 背景カード - Figma: top: 400px, width: 353px, height: 60px
-                // 画面の中央に配置
-                RoundedRectangle(cornerRadius: 8 * scaleX)
-                    .fill(Color.white)
-                    .frame(width: cardWidth * scaleX, height: 60 * scaleY)
-                    .shadow(color: .black.opacity(0.25), radius: 2 * scaleX, x: 0, y: 2 * scaleY)
-                    .position(
-                        x: geometry.size.width / 2, // 画面の中央に配置
-                        y: (top + 60 / 2) * scaleY
-                    )
+        let cardWidth: CGFloat = 353
+        ZStack(alignment: .topLeading) {
+            // 背景カード - Figma: top: 400px, width: 353px, height: 60px
+            // 画面の中央に配置（親から渡されたscreenWidthを使用）
+            RoundedRectangle(cornerRadius: 8 * scaleX)
+                .fill(Color.white)
+                .frame(width: cardWidth * scaleX, height: 60 * scaleY)
+                .shadow(color: .black.opacity(0.25), radius: 2 * scaleX, x: 0, y: 2 * scaleY)
+                .position(
+                    x: screenWidth / 2, // 画面の中央に配置
+                    y: (top + 60 / 2) * scaleY
+                )
+        
+            // アイコン - Figma: Group49, left: 35px, top: 411px, width: 41.667px, height: 40px
+            // カードが中央に配置されているので、カードの左端からの相対位置を計算
+            // カードの左端 = 画面中央 - カード幅/2
+            let cardLeft = screenWidth / 2 - (cardWidth * scaleX) / 2
+            // TSUMO_5_2を使用（青い4枚の花びらのようなアイコン、中心にオレンジのキャラクター）
+            Image("TSUMO_5_2")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 41.667 * scaleX, height: 40 * scaleY)
+                .position(
+                    x: cardLeft + 35 * scaleX + (41.667 * scaleX) / 2, // カードの左端 + 35px + アイコン幅/2
+                    y: (top + 11) * scaleY // 411 - 400 = 11
+                )
             
-                // アイコン - Figma: Group49, left: 35px, top: 411px, width: 41.667px, height: 40px
-                // カードが中央に配置されているので、カードの左端からの相対位置を計算
-                // カードの左端 = 画面中央 - カード幅/2
-                let cardLeft = geometry.size.width / 2 - (cardWidth * scaleX) / 2
-                // TSUMO_5_2を使用（青い4枚の花びらのようなアイコン、中心にオレンジのキャラクター）
-                Image("TSUMO_5_2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 41.667 * scaleX, height: 40 * scaleY)
-                    .position(
-                        x: cardLeft + 35 * scaleX + (41.667 * scaleX) / 2, // カードの左端 + 35px + アイコン幅/2
-                        y: (top + 11) * scaleY // 411 - 400 = 11
-                    )
-                
-                // グループ名 - Figma: left: 92.67px, top: 417px, 18px, Bold
-                Text(group.name)
-                    .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
-                    .foregroundColor(darkGray)
-                    .position(
-                        x: cardLeft + 92.67 * scaleX, // カードの左端 + 92.67px
-                        y: (top + 17) * scaleY // 417 - 400 = 17
-                    )
-                
-                // 招待/管理リンク - Figma: left: 356px (右端), top: 422px, 12px, Bold, #7a7a7a
-                // カードの右端から少し内側に配置
-                Text("招待 / 管理 >")
-                    .font(zenMaruGothicFontForGroups(size: 12 * scaleX, weight: .bold))
-                    .foregroundColor(lightGray)
-                    .position(
-                        x: cardLeft + (356 - 20) * scaleX, // カードの左端 + (356 - 20)px
-                        y: (top + 22) * scaleY // 422 - 400 = 22
-                    )
-            }
+            // グループ名 - Figma: left: 92.67px, top: 417px, 18px, Bold
+            Text(group.name)
+                .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
+                .foregroundColor(darkGray)
+                .position(
+                    x: cardLeft + 92.67 * scaleX, // カードの左端 + 92.67px
+                    y: (top + 17) * scaleY // 417 - 400 = 17
+                )
+            
+            // 招待/管理リンク - Figma: left: 356px (右端), top: 422px, 12px, Bold, #7a7a7a
+            // カードの右端から少し内側に配置
+            Text("招待 / 管理 >")
+                .font(zenMaruGothicFontForGroups(size: 12 * scaleX, weight: .bold))
+                .foregroundColor(lightGray)
+                .position(
+                    x: cardLeft + (356 - 20) * scaleX, // カードの左端 + (356 - 20)px
+                    y: (top + 22) * scaleY // 422 - 400 = 22
+                )
         }
     }
 }
