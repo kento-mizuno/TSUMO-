@@ -7,15 +7,41 @@
 
 import SwiftUI
 
+// ZenMaruGothicフォントのヘルパー関数
+func zenMaruGothicFontForGroups(size: CGFloat, weight: Font.Weight = .medium) -> Font {
+    let fontName: String
+    switch weight {
+    case .bold:
+        fontName = "ZenMaruGothic-Bold"
+    case .medium:
+        fontName = "ZenMaruGothic-Medium"
+    case .regular:
+        fontName = "ZenMaruGothic-Regular"
+    case .light:
+        fontName = "ZenMaruGothic-Light"
+    case .black:
+        fontName = "ZenMaruGothic-Black"
+    default:
+        fontName = "ZenMaruGothic-Medium"
+    }
+    
+    if let font = UIFont(name: fontName, size: size) {
+        return Font(font)
+    }
+    
+    return .system(size: size, weight: weight)
+}
+
 struct GroupsView: View {
     @StateObject private var viewModel = GroupsViewModel()
     @State private var showCreateGroup = false
     
-    // Figmaデザインのカラー定義
+    // Figmaデザインのカラー定義（node-id=27-5308）
     private let primaryOrange = Color(red: 0.92, green: 0.35, blue: 0.27) // #eb5844
     private let mediumBlue = Color(red: 0.27, green: 0.57, blue: 0.83) // #4591d3
     private let lightPink = Color(red: 0.99, green: 0.93, blue: 0.93) // #fdeeec
     private let darkGray = Color(red: 0.13, green: 0.13, blue: 0.13) // #222
+    private let lightGray = Color(red: 0.48, green: 0.48, blue: 0.48) // #7a7a7a
     
     var body: some View {
         GeometryReader { geometry in
@@ -28,83 +54,176 @@ struct GroupsView: View {
             let scaleY = screenHeight / designHeight
             
             ZStack {
-                // 背景色（Figma: #eb5844）
+                // 背景色（オレンジ）- Figma: bg-[#eb5844]
                 primaryOrange
                     .ignoresSafeArea()
                 
-                ZStack(alignment: .topLeading) {
-                    // タイトル（Figma: top: 72px, left: 197.5px中央, 20px, Bold）
-                    Text("グループ")
-                        .font(.system(size: 20 * scaleX, weight: .bold))
-                        .foregroundColor(.white)
-                        .position(x: 197.5 * scaleX, y: 86.5 * scaleY) // 72 + 29/2 = 86.5
-                    
-                    // 説明文（Figma: top: 172px, 16px, Medium, 中央揃え）
-                    VStack(spacing: 0) {
-                        Text("ここではグループの作成や、")
-                            .font(.system(size: 16 * scaleX, weight: .medium))
-                            .foregroundColor(darkGray)
-                        Text("メンバーの招待・管理を行います。")
-                            .font(.system(size: 16 * scaleX, weight: .medium))
-                            .foregroundColor(darkGray)
-                    }
-                    .position(x: screenWidth / 2, y: 172 * scaleY)
-                    
-                    // 新規作成ボタン（Figma: top: 242px, left: 20px, width: 353px, height: 60px）
-                    // プラスアイコン（Figma: left: 97px, top: 262px, size: 20px）
-                    // テキスト（Figma: left: 125px, top: 262px, 18px, Bold）
-                    Button(action: {
-                        showCreateGroup = true
-                    }) {
-                        ZStack(alignment: .topLeading) {
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(mediumBlue)
-                                .frame(width: 353 * scaleX, height: 60 * scaleY)
-                            
-                            Image(systemName: "plus")
-                                .font(.system(size: 20 * scaleX))
-                                .foregroundColor(.white)
-                                .position(x: 97 * scaleX, y: 262 * scaleY)
-                            
-                            Text("新規グループを作成")
-                                .font(.system(size: 18 * scaleX, weight: .bold))
-                                .foregroundColor(.white)
-                                .position(x: 125 * scaleX, y: 262 * scaleY)
-                        }
-                    }
+                // ピンクのコンテンツエリア - Figma: top: 125px, rounded-tl-[80px] rounded-tr-[80px]
+                RoundedRectangle(cornerRadius: 80 * scaleX)
+                    .fill(lightPink)
+                    .frame(width: screenWidth, height: screenHeight - 125 * scaleY)
                     .position(
-                        x: (20 + 353 / 2) * scaleX,
-                        y: (242 + 60 / 2) * scaleY
+                        x: screenWidth / 2,
+                        y: (125 + (screenHeight - 125 * scaleY) / 2) * scaleY
                     )
-                    
-                    // 参加中のグループ（Figma: top: 350px, left: 20px, 16px, Bold）
-                    Text("参加中のグループ")
-                        .font(.system(size: 16 * scaleX, weight: .bold))
-                        .foregroundColor(darkGray)
-                        .position(x: 20 * scaleX, y: 350 * scaleY)
-                    
-                    // グループリスト
-                    ScrollView {
-                        VStack(spacing: 16 * scaleY) {
-                            ForEach(Array(viewModel.groups.enumerated()), id: \.element.id) { index, group in
-                                NavigationLink(destination: GroupDetailView(group: group)) {
-                                    GroupRowView(
-                                        group: group,
-                                        scaleX: scaleX,
-                                        scaleY: scaleY,
-                                        top: 397 + CGFloat(index) * 76 // 60px高さ + 16px間隔
+                
+                ScrollView {
+                    ZStack(alignment: .topLeading) {
+                        // タイトル - Figma: top: 72px, left: 179px (中央), 20px, Bold, white
+                        Text("グループ")
+                            .font(zenMaruGothicFontForGroups(size: 20 * scaleX, weight: .bold))
+                            .foregroundColor(.white)
+                            .position(
+                                x: 179 * scaleX, // 中央: 393/2 = 196.5, でもFigmaでは179px
+                                y: 72 * scaleY
+                            )
+                        
+                        // アイコン - Figma: Group13, left: 226px, top: 79px, width: 27.407px, height: 17.03px
+                        // アイコン画像が利用可能な場合は使用、なければプレースホルダー
+                        Image(systemName: "person.2.fill")
+                            .font(.system(size: 17 * scaleX))
+                            .foregroundColor(.white)
+                            .position(
+                                x: 226 * scaleX,
+                                y: 79 * scaleY
+                            )
+                        
+                        // 説明文 - Figma: top: 172px, left: 197px (中央), 16px, Medium, 中央揃え
+                        VStack(spacing: 0) {
+                            Text("ここではグループの作成や、")
+                                .font(zenMaruGothicFontForGroups(size: 16 * scaleX, weight: .medium))
+                                .foregroundColor(darkGray)
+                            Text("メンバーの招待・管理を行います。")
+                                .font(zenMaruGothicFontForGroups(size: 16 * scaleX, weight: .medium))
+                                .foregroundColor(darkGray)
+                        }
+                        .frame(width: screenWidth)
+                        .position(
+                            x: screenWidth / 2,
+                            y: 172 * scaleY
+                        )
+                        
+                        // 新規グループ作成ボタン - Figma: top: 242px, left: 20px, width: 353px, height: 60px
+                        Button(action: {
+                            showCreateGroup = true
+                        }) {
+                            ZStack(alignment: .topLeading) {
+                                RoundedRectangle(cornerRadius: 8 * scaleX)
+                                    .fill(mediumBlue)
+                                    .frame(width: 353 * scaleX, height: 60 * scaleY)
+                                
+                                // アイコン - Figma: Group34, left: 35px, top: 252px, width: 41.667px, height: 40px
+                                Image(systemName: "person.3.fill")
+                                    .font(.system(size: 20 * scaleX))
+                                    .foregroundColor(.white)
+                                    .position(
+                                        x: (35 + 41.667 / 2) * scaleX,
+                                        y: (252 - 242 + 60 / 2) * scaleY // 252 - 242 = 10, 60/2 = 30, 合計40
                                     )
-                                }
+                                
+                                // テキスト - Figma: left: 116px, top: 258px, 18px, Bold, white
+                                Text("新規グループを作成")
+                                    .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .position(
+                                        x: 116 * scaleX,
+                                        y: (258 - 242 + 60 / 2) * scaleY // 258 - 242 = 16, 60/2 = 30, 合計46
+                                    )
+                                
+                                // プラス記号 - Figma: left: 347px (中央), top: 259px, 18px, Bold, white
+                                Text("＋")
+                                    .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .position(
+                                        x: 347 * scaleX,
+                                        y: (259 - 242 + 60 / 2) * scaleY // 259 - 242 = 17, 60/2 = 30, 合計47
+                                    )
                             }
                         }
-                        .padding(.horizontal, 20 * scaleX)
-                        .padding(.top, 47 * scaleY) // 397 - 350 = 47
+                        .position(
+                            x: (20 + 353 / 2) * scaleX,
+                            y: (242 + 60 / 2) * scaleY
+                        )
+                        
+                        // 参加中のグループセクション
+                        // タイトル - Figma: top: 350px, left: 19px, 18px, Bold
+                        Text("参加中のグループ")
+                            .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
+                            .foregroundColor(darkGray)
+                            .position(
+                                x: 19 * scaleX,
+                                y: 350 * scaleY
+                            )
+                        
+                        // グループリスト
+                        ForEach(Array(viewModel.groups.enumerated()), id: \.element.id) { index, group in
+                            GroupRowView(
+                                group: group,
+                                scaleX: scaleX,
+                                scaleY: scaleY,
+                                top: 400 + CGFloat(index) * 76 // 60px高さ + 16px間隔
+                            )
+                        }
+                        
+                        // 友だちリストセクション
+                        // タイトル - Figma: top: 584px, left: 19px, 18px, Bold
+                        Text("友だちリスト")
+                            .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
+                            .foregroundColor(darkGray)
+                            .position(
+                                x: 19 * scaleX,
+                                y: 584 * scaleY
+                            )
+                        
+                        // 友だちグリッド - Figma: 3x3グリッド, top: 634pxから開始
+                        // カードサイズ: width: 106.627px, height: 133.122px
+                        // 間隔: 約23px (142.69 - 19 - 106.627 = 16.063, 266.37 - 142.69 - 106.627 = 17.053)
+                        let cardWidth: CGFloat = 106.627
+                        let cardHeight: CGFloat = 133.122
+                        let cardSpacing: CGFloat = 16.063
+                        let gridStartX: CGFloat = 19
+                        let gridStartY: CGFloat = 634
+                        
+                        // サンプルデータ（実際のデータに置き換える必要があります）
+                        let friends = Array(repeating: "User Name", count: 9)
+                        
+                        ForEach(0..<9, id: \.self) { index in
+                            let row = index / 3
+                            let col = index % 3
+                            let cardX = gridStartX + CGFloat(col) * (cardWidth + cardSpacing)
+                            let cardY = gridStartY + CGFloat(row) * (cardHeight + 16.32) // 784.44 - 634 = 150.44, 934.88 - 784.44 = 150.44
+                            
+                            // 友だちカード
+                            VStack(spacing: 0) {
+                                // アバター - Figma: Ellipse1, width: 53.313px, height: 54.115px
+                                Circle()
+                                    .fill(primaryOrange)
+                                    .frame(width: 53.313 * scaleX, height: 54.115 * scaleY)
+                                    .padding(.top, 19.36 * scaleY) // 653.48 - 634 = 19.48
+                                
+                                // ユーザー名 - Figma: top: 734.11px, 14px, Regular, 中央揃え
+                                Text(friends[index])
+                                    .font(.system(size: 14 * scaleX, weight: .regular))
+                                    .foregroundColor(darkGray)
+                                    .padding(.top, 8 * scaleY)
+                            }
+                            .frame(width: cardWidth * scaleX, height: cardHeight * scaleY)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8 * scaleX)
+                                    .fill(Color.white)
+                                    .shadow(color: .black.opacity(0.25), radius: 2 * scaleX, x: 0, y: 2 * scaleY)
+                            )
+                            .position(
+                                x: (cardX + cardWidth / 2) * scaleX,
+                                y: (cardY + cardHeight / 2) * scaleY
+                            )
+                        }
                     }
+                    .frame(width: screenWidth, height: 1200 * scaleY) // コンテンツの高さを確保
                 }
             }
         }
-        .navigationTitle("グループ")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(true)
         .sheet(isPresented: $showCreateGroup) {
             CreateGroupView()
         }
@@ -120,14 +239,16 @@ struct GroupRowView: View {
     let group: Group
     let scaleX: CGFloat
     let scaleY: CGFloat
-    var top: CGFloat = 397 * 1.0 // 行のtop位置
+    var top: CGFloat = 400
     
     private let darkGray = Color(red: 0.13, green: 0.13, blue: 0.13) // #222
+    private let lightGray = Color(red: 0.48, green: 0.48, blue: 0.48) // #7a7a7a
+    private let mediumBlue = Color(red: 0.27, green: 0.57, blue: 0.83) // #4591d3
     
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // 背景（Figma: top: 397px, left: 20px, width: 353px, height: 60px）
-            RoundedRectangle(cornerRadius: 8)
+            // 背景カード - Figma: top: 400px, left: 20px, width: 353px, height: 60px
+            RoundedRectangle(cornerRadius: 8 * scaleX)
                 .fill(Color.white)
                 .frame(width: 353 * scaleX, height: 60 * scaleY)
                 .shadow(color: .black.opacity(0.25), radius: 2 * scaleX, x: 0, y: 2 * scaleY)
@@ -136,32 +257,33 @@ struct GroupRowView: View {
                     y: (top + 60 / 2) * scaleY
                 )
             
-            // アイコン（Figma: top: 407px, left: 35px, width: 40px, height: 40px）
-            Circle()
-                .fill(Color.gray.opacity(0.3))
-                .frame(width: 40 * scaleX, height: 40 * scaleY)
+            // アイコン - Figma: Group49, left: 35px, top: 411px, width: 41.667px, height: 40px
+            Image(systemName: "person.3.fill")
+                .font(.system(size: 20 * scaleX))
+                .foregroundColor(mediumBlue)
+                .frame(width: 41.667 * scaleX, height: 40 * scaleY)
                 .position(
-                    x: 35 * scaleX,
-                    y: (top + 10) * scaleY // 407 - 397 = 10
+                    x: (35 + 41.667 / 2) * scaleX,
+                    y: (top + 10 + 40 / 2) * scaleY // 411 - 400 = 11, 11 + 40/2 = 31
                 )
             
-            // グループ名（Figma: top: 404px, left: 96.67px, 18px, Bold）
+            // グループ名 - Figma: left: 92.67px, top: 417px, 18px, Bold
             Text(group.name)
-                .font(.system(size: 18 * scaleX, weight: .bold))
+                .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
                 .foregroundColor(darkGray)
-                .position(x: 96.67 * scaleX, y: (top + 7) * scaleY) // 404 - 397 = 7
+                .position(
+                    x: 92.67 * scaleX,
+                    y: (top + 17) * scaleY // 417 - 400 = 17
+                )
             
-            // オーナー名（Figma: top: 432px, left: 97px, 12px, Bold, rgba(34,34,34,0.5)）
-            Text("オーナー：\(group.ownerId)")
-                .font(.system(size: 12 * scaleX, weight: .bold))
-                .foregroundColor(darkGray.opacity(0.5))
-                .position(x: 97 * scaleX, y: (top + 35) * scaleY) // 432 - 397 = 35
-            
-            // 矢印アイコン（Figma: top: 420.17px, left: 343.83px）
-            Image(systemName: "chevron.right")
-                .font(.system(size: 15.203 * scaleX))
-                .foregroundColor(darkGray)
-                .position(x: 343.83 * scaleX, y: (top + 23.17) * scaleY) // 420.17 - 397 = 23.17
+            // 招待/管理リンク - Figma: left: 356px (右端), top: 422px, 12px, Bold, #7a7a7a
+            Text("招待 / 管理 >")
+                .font(zenMaruGothicFontForGroups(size: 12 * scaleX, weight: .bold))
+                .foregroundColor(lightGray)
+                .position(
+                    x: 356 * scaleX,
+                    y: (top + 22) * scaleY // 422 - 400 = 22
+                )
         }
     }
 }
