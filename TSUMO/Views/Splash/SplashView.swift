@@ -12,11 +12,13 @@ struct SplashView: View {
     @State private var isComplete = false
     @StateObject private var authViewModel = AuthViewModel()
     
-    // Figmaデザインのカラー定義
+    // Figmaデザインのカラー定義（node-id=12-4129に合わせて更新）
     private let primaryOrange = Color(red: 0.92, green: 0.35, blue: 0.27) // #eb5844
     private let lightPink = Color(red: 0.98, green: 0.95, blue: 0.95) // オフホワイト
     private let mediumBlue = Color(red: 0.27, green: 0.57, blue: 0.83) // #4591d3
     private let darkGray = Color(red: 0.13, green: 0.13, blue: 0.13) // #222
+    // プログレスバー背景色（Figmaデザインに合わせて調整）
+    private let progressBarBackground = Color(red: 0.85, green: 0.85, blue: 0.85, opacity: 0.5)
     
     var body: some View {
         GeometryReader { geometry in
@@ -29,9 +31,14 @@ struct SplashView: View {
             let scaleY = screenHeight / designHeight
             
             ZStack {
-                // 背景色（赤オレンジ）
-                primaryOrange
-                    .ignoresSafeArea()
+                // 背景グラデーション - Figma: bg-gradient-to-b from-[#eb5844] to-[#4591d3]
+                // 上から下へのグラデーション（オレンジ → 青）
+                LinearGradient(
+                    gradient: Gradient(colors: [primaryOrange, mediumBlue]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
                 
                 // 中央のピンクエリア（楕円形）- Figma: Ellipse 149 (685 x 551)
                 Ellipse()
@@ -53,8 +60,9 @@ struct SplashView: View {
                     )
                 
                 // プログレスバー背景 - Figma: Rectangle 3 (left: 56px, top: 415px, width: 280px, height: 42px)
+                // Figmaデザイン（node-id=12-4129）に合わせて背景色を調整
                 RoundedRectangle(cornerRadius: 40 * scaleX)
-                    .fill(Color(red: 0.85, green: 0.85, blue: 0.85, opacity: 0.5))
+                    .fill(progressBarBackground)
                     .frame(width: 280 * scaleX, height: 42 * scaleY)
                     .position(
                         x: (56 + 280 / 2) * scaleX, // left + width/2
