@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 // ZenMaruGothicフォントのヘルパー関数
 func zenMaruGothicFontForGroups(size: CGFloat, weight: Font.Weight = .medium) -> Font {
@@ -79,13 +80,14 @@ struct GroupsView: View {
                             )
                         
                         // アイコン - Figma: Group13, left: 226px, top: 79px, width: 27.407px, height: 17.03px
-                        // アイコン画像が利用可能な場合は使用、なければプレースホルダー
-                        Image(systemName: "person.2.fill")
-                            .font(.system(size: 17 * scaleX))
-                            .foregroundColor(.white)
+                        // TSUMO_5_2を使用
+                        Image("TSUMO_5_2")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 27.407 * scaleX, height: 17.03 * scaleY)
                             .position(
-                                x: 226 * scaleX,
-                                y: 79 * scaleY
+                                x: (226 + 27.407 / 2) * scaleX,
+                                y: (79 + 17.03 / 2) * scaleY
                             )
                         
                         // 説明文 - Figma: top: 172px, left: 197px (中央), 16px, Medium, 中央揃え
@@ -113,30 +115,34 @@ struct GroupsView: View {
                                     .frame(width: 353 * scaleX, height: 60 * scaleY)
                                 
                                 // アイコン - Figma: Group34, left: 35px, top: 252px, width: 41.667px, height: 40px
-                                Image(systemName: "person.3.fill")
-                                    .font(.system(size: 20 * scaleX))
-                                    .foregroundColor(.white)
+                                // TSUMO_1を使用（オレンジのキャラクターアイコン）
+                                Image("TSUMO_1")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 41.667 * scaleX, height: 40 * scaleY)
                                     .position(
-                                        x: (35 + 41.667 / 2) * scaleX,
-                                        y: (252 - 242 + 60 / 2) * scaleY // 252 - 242 = 10, 60/2 = 30, 合計40
+                                        x: (35 - 20 + 41.667 / 2) * scaleX, // ボタン内の相対位置
+                                        y: (252 - 242) * scaleY // ボタン内の相対位置
                                     )
                                 
                                 // テキスト - Figma: left: 116px, top: 258px, 18px, Bold, white
+                                // ボタンのleft: 20pxからの相対位置なので、116 - 20 = 96px
                                 Text("新規グループを作成")
                                     .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
                                     .foregroundColor(.white)
                                     .position(
-                                        x: 116 * scaleX,
-                                        y: (258 - 242 + 60 / 2) * scaleY // 258 - 242 = 16, 60/2 = 30, 合計46
+                                        x: (116 - 20) * scaleX, // ボタン内の相対位置
+                                        y: (258 - 242) * scaleY // ボタン内の相対位置
                                     )
                                 
                                 // プラス記号 - Figma: left: 347px (中央), top: 259px, 18px, Bold, white
+                                // ボタンのleft: 20pxからの相対位置なので、347 - 20 = 327px
                                 Text("＋")
                                     .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
                                     .foregroundColor(.white)
                                     .position(
-                                        x: 347 * scaleX,
-                                        y: (259 - 242 + 60 / 2) * scaleY // 259 - 242 = 17, 60/2 = 30, 合計47
+                                        x: (347 - 20) * scaleX, // ボタン内の相対位置
+                                        y: (259 - 242) * scaleY // ボタン内の相対位置
                                     )
                             }
                         }
@@ -258,30 +264,35 @@ struct GroupRowView: View {
                 )
             
             // アイコン - Figma: Group49, left: 35px, top: 411px, width: 41.667px, height: 40px
-            Image(systemName: "person.3.fill")
-                .font(.system(size: 20 * scaleX))
-                .foregroundColor(mediumBlue)
+            // カードのleft: 20pxからの相対位置なので、35 - 20 = 15px
+            // TSUMO_5_2を使用（青い4枚の花びらのようなアイコン、中心にオレンジのキャラクター）
+            Image("TSUMO_5_2")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 41.667 * scaleX, height: 40 * scaleY)
                 .position(
-                    x: (35 + 41.667 / 2) * scaleX,
-                    y: (top + 10 + 40 / 2) * scaleY // 411 - 400 = 11, 11 + 40/2 = 31
+                    x: (35 - 20 + 41.667 / 2) * scaleX, // カード内の相対位置
+                    y: (411 - 400) * scaleY // カード内の相対位置
                 )
             
             // グループ名 - Figma: left: 92.67px, top: 417px, 18px, Bold
+            // カードのleft: 20pxからの相対位置なので、92.67 - 20 = 72.67px
             Text(group.name)
                 .font(zenMaruGothicFontForGroups(size: 18 * scaleX, weight: .bold))
                 .foregroundColor(darkGray)
                 .position(
-                    x: 92.67 * scaleX,
-                    y: (top + 17) * scaleY // 417 - 400 = 17
+                    x: (92.67 - 20) * scaleX, // カード内の相対位置
+                    y: (417 - 400) * scaleY // カード内の相対位置
                 )
             
             // 招待/管理リンク - Figma: left: 356px (右端), top: 422px, 12px, Bold, #7a7a7a
+            // カードのleft: 20px、width: 353pxなので、カード内の相対位置は 356 - 20 = 336px
+            // ただし、テキストは右端に配置されるので、カードの右端から少し内側に配置
             Text("招待 / 管理 >")
                 .font(zenMaruGothicFontForGroups(size: 12 * scaleX, weight: .bold))
                 .foregroundColor(lightGray)
                 .position(
-                    x: 356 * scaleX,
+                    x: (356 - 20) * scaleX, // カード内の相対位置（右端から少し内側）
                     y: (top + 22) * scaleY // 422 - 400 = 22
                 )
         }
